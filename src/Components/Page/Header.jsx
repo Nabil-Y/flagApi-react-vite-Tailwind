@@ -3,7 +3,7 @@ import { faMoon } from '@fortawesome/free-regular-svg-icons';
 
 const Header = () => {
   return (
-    <header className="flex justify-between px-12 py-6">
+    <header className="flex justify-between bg-elements-lt px-12 py-6 shadow-lg dark:bg-elements-dk">
       <h1 className="text-2xl font-extrabold">Where in the world?</h1>
       <button className="text-sm font-semibold" type="button">
         <FontAwesomeIcon icon={faMoon} className="px-1" />
