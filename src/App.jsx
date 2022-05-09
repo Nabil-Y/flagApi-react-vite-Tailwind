@@ -1,4 +1,5 @@
-import Header from './Components/Page/Header';
+import Header from './Components/Layout/Header';
+import FlagGallery from './Components/Page/FlagGallery';
 import Search from './Components/Page/Search';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Header />
       <Search />
+      <FlagGallery />
     </>
   );
 }
