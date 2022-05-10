@@ -34,20 +34,22 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between bg-elements-lt px-4 py-6 shadow-lg dark:bg-elements-dk md:px-12">
-      <h1 className="text-lg font-extrabold md:text-2xl">Where in the world?</h1>
-      <button
-        className="text-xs font-semibold md:mr-4 md:text-sm"
-        type="button"
-        onClick={clickHandler}
-      >
-        {document.documentElement.classList.contains('dark') ? (
-          <FontAwesomeIcon icon={faMoonSolid} className="px-1" />
-        ) : (
-          <FontAwesomeIcon icon={faMoonRegular} className="px-1" />
-        )}
-        Dark mode
-      </button>
+    <header className=" bg-elements-lt shadow-lg dark:bg-elements-dk">
+      <div className=" mx-auto flex max-w-[1440px] justify-between px-4 py-6 md:px-12">
+        <h1 className="text-lg font-extrabold md:text-2xl">Where in the world?</h1>
+        <button
+          className="text-xs font-semibold md:mr-4 md:text-sm"
+          type="button"
+          onClick={clickHandler}
+        >
+          {document.documentElement.classList.contains('dark') ? (
+            <FontAwesomeIcon icon={faMoonSolid} className="px-1" />
+          ) : (
+            <FontAwesomeIcon icon={faMoonRegular} className="px-1" />
+          )}
+          Dark mode
+        </button>
+      </div>
     </header>
   );
 };

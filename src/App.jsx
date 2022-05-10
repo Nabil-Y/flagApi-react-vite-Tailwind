@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <Header />
-      <HomePage />
+      <main className="mx-auto max-w-[1440px]">
+        <HomePage />
+      </main>
     </>
   );
 }
