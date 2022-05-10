@@ -7,8 +7,8 @@ const Filter = (props) => {
   const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 
   return (
-    <div id="region-selector" className="relative">
-      <Card className="mb-8 inline-block w-[160px] sm:w-[173px]">
+    <div id="region-selector" className="relative md:mr-4">
+      <Card className="mb-2 inline-block w-[160px] sm:w-[173px]">
         <button
           type="button"
           className="p-4 sm:p-6"

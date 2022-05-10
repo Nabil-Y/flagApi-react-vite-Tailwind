@@ -34,9 +34,13 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between bg-elements-lt px-12 py-6 shadow-lg dark:bg-elements-dk">
-      <h1 className="text-2xl font-extrabold">Where in the world?</h1>
-      <button className="text-sm font-semibold" type="button" onClick={clickHandler}>
+    <header className="flex justify-between bg-elements-lt px-4 py-6 shadow-lg dark:bg-elements-dk md:px-12">
+      <h1 className="text-lg font-extrabold md:text-2xl">Where in the world?</h1>
+      <button
+        className="text-xs font-semibold md:mr-4 md:text-sm"
+        type="button"
+        onClick={clickHandler}
+      >
         {document.documentElement.classList.contains('dark') ? (
           <FontAwesomeIcon icon={faMoonSolid} className="px-1" />
         ) : (

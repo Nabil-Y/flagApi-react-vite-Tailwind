@@ -1,13 +1,11 @@
 import Header from './Components/Layout/Header';
-import FlagGallery from './Components/Page/FlagGallery';
-import Search from './Components/Page/Search';
+import HomePage from './Components/Page/HomePage';
 
 function App() {
   return (
     <>
       <Header />
-      <Search />
-      <FlagGallery />
+      <HomePage />
     </>
   );
 }

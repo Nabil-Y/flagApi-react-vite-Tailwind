@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Input from './Input';
 import Filter from './Filter';
+import FlagGallery from '../Page/FlagGallery';
 
 const Search = () => {
   const [isListVisible, setIsListVisible] = useState(false);
@@ -19,14 +20,17 @@ const Search = () => {
   };
 
   return (
-    <section className="block p-12 sm:flex sm:justify-between">
-      <Input filter={filter} onChange={changeHandler} />
-      <Filter
-        isListVisible={isListVisible}
-        focusHandler={focusHandler}
-        clickHandler={clickHandler}
-      />
-    </section>
+    <>
+      <section className="block p-4 pb-0 sm:flex sm:justify-between md:p-12">
+        <Input filter={filter} onChange={changeHandler} />
+        <Filter
+          isListVisible={isListVisible}
+          focusHandler={focusHandler}
+          clickHandler={clickHandler}
+        />
+      </section>
+      <FlagGallery value={filter} />
+    </>
   );
 };
 
