@@ -17,11 +17,10 @@ const Search = () => {
   };
   const changeHandler = (event) => {
     setInput(event.target.value);
-    setFilter('');
   };
 
   return (
-    <>
+    <main className="mx-auto max-w-[1440px]">
       <section className="block p-4 pb-0 sm:flex sm:justify-between md:p-12">
         <Input changeHandler={changeHandler} />
         <Filter
@@ -31,7 +30,7 @@ const Search = () => {
         />
       </section>
       <FlagGallery filter={filter} input={input} />
-    </>
+    </main>
   );
 };
 
