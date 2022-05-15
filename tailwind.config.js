@@ -15,7 +15,7 @@ module.exports = {
         custom: ['Nunito Sans', 'sans-serif'],
       },
       gridTemplateColumns: {
-        gallery: 'repeat(auto-fill, minmax(400px,1fr))',
+        gallery: 'repeat(auto-fill, minmax(280px,1fr))',
       },
     },
   },

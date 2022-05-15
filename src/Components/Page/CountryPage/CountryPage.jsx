@@ -32,20 +32,21 @@ const CountryPage = () => {
     return (
       <main className="mx-auto flex max-w-[1440px] flex-col px-4 py-6 md:px-12">
         <Link to="/" className="self-start">
-          <Card className="my-16 px-10 py-3 text-lg">
+          <Card className="my-8 px-10 py-3 text-lg sm:my-16">
             <FontAwesomeIcon icon={faArrowLeft} className="pr-4" />
             Back
           </Card>
         </Link>
-        <article className="flex">
-          <img src={countryData.flags.png} alt={`Flag of ${countryData.name.common}`} />
-          <section className="w-full">
-            <h2>{countryData.name.common}</h2>
+        <article className="flex flex-wrap justify-between">
+          <img
+            src={countryData.flags.png}
+            alt={`Flag of ${countryData.name.common}`}
+            className="w-full max-w-[400px] sm:max-w-[40%] "
+          />
+          <section className="text-base sm:min-w-[400px] ">
+            <h2 className="py-8 text-3xl font-bold">{countryData.name.common}</h2>
             <DetailsLists data={countryData} />
-            <div className="flex">
-              <span className="font-bold">Border Countries:</span>
-              <Borders borders={countryData.borders} linkClickHandler={linkClickHandler} />
-            </div>
+            <Borders borders={countryData.borders} linkClickHandler={linkClickHandler} />
           </section>
         </article>
       </main>

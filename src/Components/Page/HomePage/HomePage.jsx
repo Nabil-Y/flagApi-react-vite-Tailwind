@@ -13,7 +13,11 @@ const Search = () => {
   };
   const clickHandler = (event) => {
     const region = event.target.textContent;
-    setFilter(region);
+    if (region === 'Reset') {
+      setFilter('');
+    } else {
+      setFilter(region);
+    }
   };
   const changeHandler = (event) => {
     setInput(event.target.value);

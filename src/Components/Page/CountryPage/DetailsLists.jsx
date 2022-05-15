@@ -21,17 +21,17 @@ const DetailsLists = (props) => {
 
   const displayCountryCardData = (array) => {
     return array.map((li, index) => (
-      <li key={props.data.name.common + index} className="pb-1">
+      <li key={props.data.name.common + index} className="pb-2">
         <span className="font-bold">{li[0]}</span> {li[1]}
       </li>
     ));
   };
 
   return (
-    <>
-      <ul>{displayCountryCardData(firstListData)}</ul>
-      <ul>{displayCountryCardData(secondListData)}</ul>
-    </>
+    <div className="sm:flex sm:flex-wrap">
+      <ul className="mb-8 sm:pr-16">{displayCountryCardData(firstListData)}</ul>
+      <ul className="mb-8 sm:pr-16">{displayCountryCardData(secondListData)}</ul>
+    </div>
   );
 };
 

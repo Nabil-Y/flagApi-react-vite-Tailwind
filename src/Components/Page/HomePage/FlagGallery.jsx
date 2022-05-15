@@ -20,8 +20,8 @@ const FlagGallery = (props) => {
 
   useEffect(() => {
     if (props.input) {
-      setFilteredFlagData(
-        flagData.filter((country) =>
+      setFilteredFlagData((prevState) =>
+        prevState.filter((country) =>
           country.name.common.toLowerCase().includes(props.input.toLowerCase())
         )
       );
@@ -31,22 +31,24 @@ const FlagGallery = (props) => {
           country.region.toLowerCase().includes(props.filter.toLowerCase())
         )
       );
+    } else {
+      setFilteredFlagData(flagData);
     }
   }, [props.filter, props.input]);
 
   const displayCountries = () => {
-    if (filteredFlagData.length === 1) {
+    if (filteredFlagData?.length === 1) {
       return (
-        <Link to={`id/${country.cca3}`} key={country.cca3}>
+        <Link to={`id/${filteredFlagData[0].cca3}`} key={filteredFlagData[0].cca3}>
           <CountryCard key={filteredFlagData[0].name.common} data={filteredFlagData[0]} />
         </Link>
       );
     }
-    if (filteredFlagData.length === 0) {
+    if (filteredFlagData?.length === 0) {
       return 'No country matches your query';
     }
 
-    return filteredFlagData.map((country) => (
+    return filteredFlagData?.map((country) => (
       <Link to={`id/${country.cca3}`} key={country.cca3}>
         <CountryCard data={country} />
       </Link>
@@ -54,10 +56,12 @@ const FlagGallery = (props) => {
   };
 
   return (
-    <section className="flex flex-wrap justify-center px-4 py-6 md:justify-between  md:px-12">
+    <section className="grid justify-center gap-6 px-4 sm:grid-cols-gallery md:px-12">
       {isLoading ? <h2 className="text-2xl font-bold">Loading...</h2> : displayCountries()}
     </section>
   );
 };
 
 export default FlagGallery;
+
+//flex flex-wrap justify-center px-4 py-6 md:justify-between  md:px-12

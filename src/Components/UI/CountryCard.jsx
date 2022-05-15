@@ -16,17 +16,15 @@ const CountryCard = (props) => {
     ));
   };
   return (
-    <>
-      <Card className="mb-10 w-[300px] sm:mr-4">
-        <img
-          className="h-[180px] w-full sm:h-[200px]"
-          src={props.data.flags.png}
-          alt={`Flag of ${props.data.name.common}`}
-        />
-        <h2 className="p-4 text-xl font-bold">{props.data.name.common}</h2>
-        <ul className="pl-4 pb-8">{displayCountryCardData()}</ul>
-      </Card>
-    </>
+    <Card className="mb-10 max-w-[400px]  sm:mr-4 sm:w-[290px]">
+      <img
+        className="w-full  sm:h-[200px]"
+        src={props.data.flags.png}
+        alt={`Flag of ${props.data.name.common}`}
+      />
+      <h2 className="p-4 text-xl font-bold">{props.data.name.common}</h2>
+      <ul className="pl-4 pb-8">{displayCountryCardData()}</ul>
+    </Card>
   );
 };
 

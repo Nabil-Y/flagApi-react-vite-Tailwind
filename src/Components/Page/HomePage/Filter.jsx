@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Filter = (props) => {
-  const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania', 'Reset'];
 
   return (
     <div id="region-selector" className="relative md:mr-4">
