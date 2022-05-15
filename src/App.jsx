@@ -1,5 +1,5 @@
 import Header from './Components/Layout/Header';
-import HomePage from './Components/Page/Homepage/HomePage';
+import HomePage from './Components/Page/HomePage/HomePage';
 import CountryPage from './Components/Page/CountryPage/CountryPage';
 import Error from './Components/UI/Error';
 import { Routes, Route } from 'react-router-dom';
