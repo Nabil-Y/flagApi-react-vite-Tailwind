@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useLayoutEffect } from 'react';
-import CountryCard from '../UI/CountryCard';
+import CountryCard from '../../UI/CountryCard';
+import { Link } from 'react-router-dom';
 
 const FlagGallery = (props) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +14,8 @@ const FlagGallery = (props) => {
         setFlagData(data);
         setFilteredFlagData(data);
         setIsLoading(false);
-      });
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
@@ -34,14 +36,20 @@ const FlagGallery = (props) => {
 
   const displayCountries = () => {
     if (filteredFlagData.length === 1) {
-      return <CountryCard key={filteredFlagData[0].name.common} data={filteredFlagData[0]} />;
+      return (
+        <Link to={`id/${country.cca3}`} key={country.cca3}>
+          <CountryCard key={filteredFlagData[0].name.common} data={filteredFlagData[0]} />
+        </Link>
+      );
     }
     if (filteredFlagData.length === 0) {
       return 'No country matches your query';
     }
 
     return filteredFlagData.map((country) => (
-      <CountryCard key={country.name.common} data={country} />
+      <Link to={`id/${country.cca3}`} key={country.cca3}>
+        <CountryCard data={country} />
+      </Link>
     ));
   };
 
@@ -53,7 +61,3 @@ const FlagGallery = (props) => {
 };
 
 export default FlagGallery;
-
-// flex flex-wrap justify-center md:justify-between
-
-// grid grid-cols-gallery

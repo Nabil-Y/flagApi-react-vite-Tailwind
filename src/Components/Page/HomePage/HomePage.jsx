@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Input from './Input';
 import Filter from './Filter';
-import FlagGallery from '../Page/FlagGallery';
+import FlagGallery from './FlagGallery';
 
 const Search = () => {
   const [isListVisible, setIsListVisible] = useState(false);
