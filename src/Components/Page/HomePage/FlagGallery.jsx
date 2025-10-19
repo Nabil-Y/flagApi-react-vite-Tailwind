@@ -8,7 +8,7 @@ const FlagGallery = (props) => {
   const [filteredFlagData, setFilteredFlagData] = useState('');
 
   useLayoutEffect(() => {
-    fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v3.1/all?fields=name,capital,population,region,cca3,flags')
       .then((res) => res.json())
       .then((data) => {
         setFlagData(data);
@@ -63,5 +63,3 @@ const FlagGallery = (props) => {
 };
 
 export default FlagGallery;
-
-//flex flex-wrap justify-center px-4 py-6 md:justify-between  md:px-12
